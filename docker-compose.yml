@@ -1,0 +1,10 @@
+services:
+  jupyter:
+    image: jupyter/base-notebook
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./project:/home/jovyan/work

@@ -19,3 +19,6 @@ RUN apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 RUN usermod -aG docker jovyan
 
 RUN apt install -y git build-essential
+
+# fix docker group
+RUN groupadd -f -g 988 docker2 && usermod -aG docker2 jovyan
